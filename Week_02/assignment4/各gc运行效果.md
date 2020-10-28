@@ -275,7 +275,7 @@
 [1.121s][info   ][gc,heap,exit   ]   class space    used 25K, capacity 392K, committed 512K, reserved 1048576K
 [root@0a6ef877d5fa mnt]# 
 ```
-在设置最大堆内存512m情况下，产生29次gc，`Pause Young`标识young gc，`Pause Full`标识full gc，过程更为复杂，包含标记。移动操作
+在设置最大堆内存512m情况下，产生29次gc，`Pause Young`标识young gc，`Pause Full`标识full gc，过程更为复杂，包含标记，移动操作
 
 2.  并行gc
 ```
@@ -2590,4 +2590,5 @@ gc次数降低明显
 [1.134s][info   ][gc,heap,exit   ]  Metaspace       used 340K, capacity 4508K, committed 4864K, reserved 1056768K
 [1.134s][info   ][gc,heap,exit   ]   class space    used 25K, capacity 392K, committed 512K, reserved 1048576K
 ```
-G1 gc次数暴多，发生两次full gc，old regions不断增加
+G1 gc次数暴多，发生两次full gc，old regions不断增加\\
+**请老师麻烦解释一下gc实际现象差异的原因，谢谢~**
