@@ -16,4 +16,9 @@ public class SpringBackendApplication {
     public String hello() {
         return String.format("Hello Spring");
     }
+
+    @GetMapping("/api/check")
+    public String check() {
+        return String.format("Check Spring");
+    }
 }

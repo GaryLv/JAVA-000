@@ -1,5 +1,6 @@
 package com.example.gateway.inbound;
 
+import com.example.gateway.filter.HttpRequestFilterImpl;
 import com.example.gateway.outbound.httpclient.HttpOutboundHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -34,7 +35,8 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
 //            if (uri.contains("/test")) {
 //                handlerTest(fullRequest, ctx);
 //            }
-    
+
+            new HttpRequestFilterImpl().filter(fullRequest, ctx);
             handler.handle(fullRequest, ctx);
     
         } catch(Exception e) {
